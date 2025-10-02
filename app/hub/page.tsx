@@ -57,7 +57,7 @@ export default function HubPage() {
   const [chatMessages, setChatMessages] = useState([{ type: "bot", text: "Namaste! How can I assist you today?" }])
   const [chatInput, setChatInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
-
+  const [itineraryVisible, setItineraryVisible] = useState(false)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date())
@@ -415,12 +415,11 @@ export default function HubPage() {
                     </Select>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 rounded-full">
+                  <Button onClick={()=>setItineraryVisible(!itineraryVisible)} className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 rounded-full">
                     Generate Itinerary
                   </Button>
                 </div>
-
-                <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20">
+                {itineraryVisible &&<Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20">
                   <CardHeader>
                     <CardTitle className="text-lg">Your Suggested Itinerary</CardTitle>
                   </CardHeader>
@@ -462,7 +461,9 @@ export default function HubPage() {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
+                </Card>}
+
+                
               </div>
             </CardContent>
           </Card>
