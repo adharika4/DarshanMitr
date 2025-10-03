@@ -1,47 +1,46 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Progress } from "@/components/ui/progress"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
-  MapPin,
-  Users,
-  Calendar,
-  Clock,
-  Navigation,
-  Car,
-  Heart,
-  Award,
-  Sparkles,
-  AlertCircle,
-  CheckCircle,
-  Play,
-  Gift,
-  Trophy,
-  Star,
-  Zap,
   Activity,
-  Thermometer,
-  Droplets,
-  Wind,
-  MapPinned,
-  Phone,
-  Video,
-  BookOpen,
-  Music,
-  Shield,
-  Menu,
-  X,
-  MessageCircle,
-  Send,
+  AlertCircle,
   AlertTriangle,
+  Award,
+  BookOpen,
+  Calendar,
+  Car,
+  CheckCircle,
+  Clock,
+  Droplets,
+  Gift,
+  Heart,
+  MapPin,
+  MapPinned,
+  Menu,
+  MessageCircle,
+  Music,
+  Navigation,
+  Phone,
+  Send,
+  Shield,
+  Sparkles,
+  Star,
+  Thermometer,
+  Trophy,
+  Users,
+  Video,
+  Wind,
+  X,
+  Zap
 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function HubPage() {
   const router = useRouter()
@@ -262,21 +261,28 @@ export default function HubPage() {
             ))}
           </div>
 
+          {/* Live Crowd Video Card */}
           <Card className="neumorphic border-0">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MapPinned className="w-6 h-6 text-primary" />
-                Interactive Temple Map
-              </CardTitle>
-              <CardDescription>Real-time heatmap showing crowd density</CardDescription>
-            </CardHeader>
             <CardContent>
-              <div className="aspect-video bg-gradient-to-br from-chart-4/20 via-chart-5/20 to-destructive/20 rounded-xl flex items-center justify-center relative overflow-hidden">
-                {/* Simulated heatmap zones */}
+              <div className="aspect-video relative rounded-xl overflow-hidden">
+                {/* Video Background */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src="api_thumb_600.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Heatmap Zones */}
                 <div className="absolute top-10 left-10 w-32 h-32 bg-chart-4/60 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute top-20 right-20 w-40 h-40 bg-chart-5/60 rounded-full blur-3xl animate-pulse animation-delay-300" />
                 <div className="absolute bottom-10 left-1/3 w-36 h-36 bg-destructive/60 rounded-full blur-3xl animate-pulse animation-delay-500" />
 
+                {/* Content Overlay */}
                 <div className="relative z-10 text-center space-y-4">
                   <Users className="w-16 h-16 mx-auto text-primary" />
                   <div>
