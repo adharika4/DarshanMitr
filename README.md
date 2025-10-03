@@ -27,14 +27,6 @@ It combines AI/ML, IoT, AR/VR, and smart UI/UX concepts (frontend showcased with
 
 🤖 Multilingual AI Chatbot – Spiritual + functional Q&A (queue times, prayers, temple info).
 
-🎨 Design & UI
-
-Color Scheme: Saffron (devotion), Gold (prosperity), Turquoise (guidance), Cream/White (purity).
-
-Style: Modern, neumorphic cards, interactive dashboards, glowing buttons, smooth animations.
-
-Inclusivity: Large fonts, accessibility toggles, ARIA support.
-
 🚀 Impact
 
 ✅ Reduced waiting times & safer crowd flow.
